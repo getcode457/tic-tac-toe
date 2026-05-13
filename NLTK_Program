@@ -1,23 +1,30 @@
-NLTK Program
+2.Tokenization
+
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from collections import Counter
-# Run once
+
+# Download required packages
 nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('stopwords')
 nltk.download('averaged_perceptron_tagger')
+nltk.download('averaged_perceptron_tagger_eng')
+
 text = "Artificial Intelligence is changing the world"
+
 # Tokenization
 words = word_tokenize(text)
 print("Tokens:", words)
+
 # Word Frequency
 print("Frequency:", Counter(words))
+
 # Stop Words Removal
 stop = stopwords.words('english')
 filtered = [w for w in words if w.lower() not in stop]
 print("After Stop Words Removal:", filtered)
+
 # POS Tagging
 print("POS Tagging:", nltk.pos_tag(words))
-
-    
