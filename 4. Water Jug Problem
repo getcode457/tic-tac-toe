@@ -1,0 +1,38 @@
+4. Water Jug Problem
+
+x = 0
+y = 0
+
+while y != 2:
+
+    if x == 0:
+        x = 4
+        print(x, y)
+
+    elif y == 3:
+        y = 0
+        print(x, y)
+
+    else:
+        t = min(x, 3 - y)
+        x = x - t
+        y = y + t
+        print(x, y)
+
+
+
+5.Tower of Hanoi
+
+def toh(n, s, a, d):
+
+    if n == 1:
+        print("Move", n, "from", s, "to", d)
+        return
+
+    toh(n-1, s, d, a)
+
+    print("Move", n, "from", s, "to", d)
+
+    toh(n-1, a, s, d)
+
+toh(3, 'A', 'B', 'C')
